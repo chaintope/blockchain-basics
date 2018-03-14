@@ -1,2 +1,2 @@
-/bitcoin
-!/bitcoin/bitcoin.conf
+/conf/bitcoin/**/*
+!/conf/bitcoin/bitcoin.conf
