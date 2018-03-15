@@ -1,2 +1,3 @@
+/code/**/.*
 /conf/bitcoin/**/*
 !/conf/bitcoin/bitcoin.conf

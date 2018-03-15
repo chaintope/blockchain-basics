@@ -1,0 +1,43 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bitcoin-ruby (0.0.18)
+    byebug (10.0.0)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
+    ffi (1.9.23)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    httpclient (2.8.3)
+    leb128 (1.0.0)
+    mime-types (2.99.3)
+    netrc (0.11.0)
+    openassets-ruby (0.6.6)
+      bitcoin-ruby (~> 0.0.11)
+      ffi (~> 1.9.8)
+      httpclient
+      leb128 (~> 1.0.0)
+      rest-client (~> 1.8.0)
+      sqlite3
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    sqlite3 (1.3.13)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bitcoin-ruby (>= 0.0.18)
+  byebug
+  openassets-ruby (>= 0.6.6)
+
+RUBY VERSION
+   ruby 2.5.0p0
+
+BUNDLED WITH
+   1.16.1

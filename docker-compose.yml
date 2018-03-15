@@ -33,6 +33,18 @@ services:
       default: {}
       vpcbr:
         ipv4_address: 10.5.0.11
+  ruby:
+    container_name: ruby
+    restart: always 
+    image: ruby:2.5
+    volumes:
+      - "./code:/code"
+    working_dir: /code
+    tty: true
+    networks:
+      default: {}
+      vpcbr:
+        ipv4_address: 10.5.0.12
 networks:
     vpcbr:
         driver: bridge

@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+ruby "2.5.0"
+
+gem "bitcoin-ruby", ">= 0.0.18"
+gem "openassets-ruby", ">= 0.6.6"
+gem "byebug"
