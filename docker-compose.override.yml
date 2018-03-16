@@ -1,0 +1,24 @@
+version: '3.4'
+services:
+  bitcoind:
+    volumes:
+      - ./bitcoin:/root/.bitcoin
+    command: bitcoind -printtoconsole
+  bitcore:
+    volumes:
+      - ./bitcore/bitcore-node.json:/root/.bitcore/bitcore-node.json
+      - ./bitcore/bitcoin.conf:/root/.bitcore/data/bitcoin.conf
+  ruby:
+    container_name: ruby
+    restart: always 
+    image: ruby:2.5
+    depends_on:
+      - bitcoind
+    volumes:
+      - "./code:/code"
+    working_dir: /code
+    tty: true
+    networks:
+      default: {}
+      vpcbr:
+        ipv4_address: 10.5.0.12

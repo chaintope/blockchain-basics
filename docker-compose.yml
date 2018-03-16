@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 services:
   bitcoind:
     container_name: bitcoind
@@ -11,8 +11,6 @@ services:
       - "18333:18333"
       - "18443:18443"
       - "18444:18444"
-    volumes:
-      - ./conf/bitcoin:/root/.bitcoin
     networks:
       default: {}
       vpcbr:
@@ -24,27 +22,12 @@ services:
     image: chaintope/bitcore
     ports:
       - "3001:3001"
-    volumes:
-      - "./conf/bitcore/bitcore-node.json:/root/.bitcore/bitcore-node.json"
-      - "./conf/bitcore/bitcoin.conf:/root/.bitcore/data/bitcoin.conf"
     depends_on:
       - bitcoind
     networks:
       default: {}
       vpcbr:
         ipv4_address: 10.5.0.11
-  ruby:
-    container_name: ruby
-    restart: always 
-    image: ruby:2.5
-    volumes:
-      - "./code:/code"
-    working_dir: /code
-    tty: true
-    networks:
-      default: {}
-      vpcbr:
-        ipv4_address: 10.5.0.12
 networks:
     vpcbr:
         driver: bridge
