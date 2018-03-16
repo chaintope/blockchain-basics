@@ -1,0 +1,8 @@
+FROM busybox
+
+ADD bitcore/bitcore-node.json /data/
+ADD bitcore/bitcoin.conf /data/data/
+
+VOLUME /data
+
+CMD /bin/true

@@ -1,0 +1,7 @@
+FROM busybox
+
+ADD bitcoin/bitcoin.conf /data/
+
+VOLUME /data
+
+CMD /bin/true

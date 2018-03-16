@@ -1,0 +1,30 @@
+version: '3.4'
+services:
+  bitcoin-data: 
+    container_name: bitcoin-data
+    build:
+      context: .
+      dockerfile: Dockerfile-bitcoin-data
+    volumes: 
+      - bitcoin-data:/data
+  bitcore-data: 
+    container_name: bitcore-data
+    build:
+      context: .
+      dockerfile: Dockerfile-bitcore-data
+    volumes:
+      - bitcore-data:/data
+  bitcoind:
+    depends_on: 
+      - bitcoin-data
+      - bitcore-data
+    volumes:
+      - bitcoin-data:/root/.bitcoin
+  bitcore:
+    volumes:
+      - bitcore-data:/root/.bitcore
+volumes:
+  bitcoin-data: 
+    name: ${DATA_VOLUME:-default}-bitcoin-data
+  bitcore-data: 
+    name: ${DATA_VOLUME:-default}-bitcore-data
