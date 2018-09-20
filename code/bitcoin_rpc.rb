@@ -35,5 +35,5 @@ if $0 == __FILE__
   p rpc.getinfo
   p rpc.getbalance
   p rpc.getnewaddress
-  p rpc.dumpprivkey( h.getnewaddress )
+  p rpc.dumpprivkey( rpc.getnewaddress )
 end
